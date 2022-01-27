@@ -1,0 +1,23 @@
+{
+  "id": 11,
+  "name": "Marcus V.C. da Silva",
+  "username": "GrandFinale",
+  "email": "Sunshine21@april.biz",
+  "address": {
+    "street": "Kulas Light Freiljord",
+    "suite": "Apt. 328",
+    "city": "Atlanta",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1193242-4312",
+  "website": "HelpTetraForce.org",
+  "company": {
+    "name": "PowerUnit",
+    "catchPhrase": "You want power, we produce power for you",
+    "bs": "Donk Nou"
+  }
+}
