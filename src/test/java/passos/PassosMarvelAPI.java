@@ -23,7 +23,7 @@ public class PassosMarvelAPI extends ApiRequest {
 
     }
     //----------------------GET---------------------------------------
-    //----------------------@GetGabrielLan----------------------------
+
 
     @Dado("envio um request válido do ID de numero {int}")
     public void envioUmRequestVálidoDoIDDeNumero(int IdDeHeroi) {
@@ -41,10 +41,6 @@ public class PassosMarvelAPI extends ApiRequest {
     }
 
 
-    //--------------------métodos com Esquemas-----------------------
-    //--------------------Get----------------------------------------
-    //--------------------@GetHeroesCenario--------------------------
-
     @E("envio um request com {string} válido")
     public void envioUmRequestComVálido(String IdHeroi) {
         super.uri = prop.getProp("uri_marvel_char") + "/" + IdHeroi;
@@ -59,7 +55,7 @@ public class PassosMarvelAPI extends ApiRequest {
     }
 
     //----------------------------caminhos tristes-----------------------------
-    //------------------@GetHeroesCenario caminho triste--------------------------
+
     @E("envio um request com {string} inválido")
     public void envioUmRequestComInválido(String idInvalido) {
         super.uri = prop.getProp("uri_marvel_char") + "/" + idInvalido;

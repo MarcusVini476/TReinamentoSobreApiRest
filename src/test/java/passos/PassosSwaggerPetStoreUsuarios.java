@@ -31,7 +31,7 @@ public class PassosSwaggerPetStoreUsuarios extends ApiRequest {
     }
 
     //---------------POST-----------------------------------------------
-    //---------------@PostSwaggerUsuario---------------------------------------------------
+
     @Quando("realizo a criação de um usuario")
     public void realizoACriaçãoDeUmUsuario() {
 
@@ -71,7 +71,7 @@ public class PassosSwaggerPetStoreUsuarios extends ApiRequest {
 
 
     //-----------------------------PUT----------------------------------
-    //-----------------------------@PutSwaggerUsuario-------------------------------------
+
 
     @Quando("realizar a alteração de Nome do Usuario")
     public void realizarAAlteraçãoDeNomeDoUsuario() {
@@ -91,7 +91,7 @@ public class PassosSwaggerPetStoreUsuarios extends ApiRequest {
     }
 
     //-----------------------Deletar------------------------------------
-    //-----------------------@DeleteSwaggerUsuario-------------------------------------------
+
     @Quando("Deletear um usuario Usuario")
     public void deletearUmUsuarioUsuario() {
         realizoACriaçãoDeUmUsuario();
@@ -109,7 +109,7 @@ public class PassosSwaggerPetStoreUsuarios extends ApiRequest {
 
 
     //-----------------------Puxar login de usuario GET-----------------
-    //-----------------------@GetSwaggerLogin---------------------------
+
     @Quando("realizar a busca de Login do usuario")
     public void realizarABuscaDeLoginDoUsuario() {
         super.uri = prop.getProp("uri_petstore_login");
@@ -126,7 +126,7 @@ public class PassosSwaggerPetStoreUsuarios extends ApiRequest {
 
 
     //-----------------------Puxar logout de usuario GET-----------------
-    //-----------------------@GetSwaggerLogout---------------------------
+   
     @Quando("realizar a busca do logout do usuario")
     public void realizarABuscaDoLogoutDoUsuario() {
         super.uri = prop.getProp("uri_petstore_logout");
