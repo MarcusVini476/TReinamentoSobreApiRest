@@ -11,9 +11,12 @@ import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import org.json.JSONObject;
+import usuario.JsonPlaceHolderConstructor;
 import usuario.JsonPlaceHolderLombok;
 import usuario.JsonPlaceHolderRecords;
 import utils.UtilsProperties;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,9 +26,10 @@ public class PassosJsonPlaceHolderUser extends ApiRequest {
     ApiHeaders apiHeaders = new ApiHeaders();
     JsonPlaceHolderLombok usuarioJPHLombok;
     JsonPlaceHolderRecords usuarioJPHRecords;
+    JsonPlaceHolderConstructor jsonPlaceHolderConstructor;
 
     Faker faker = new Faker();
-    //---------chave de confirmação da Api--
+    //---------chave de confirmação da Api---
     @Dado("que tenho acesso a JsonPlaceHolder")
     public void queTenhoAcessoAJsonPlaceHolder() {
         System.out.println("Api não requer chave");
@@ -77,7 +81,19 @@ public class PassosJsonPlaceHolderUser extends ApiRequest {
         super.POST();
     }
 
+    @E("envio dados validos de um usuario usando um constructor")
+    public void envioDadosValidosDeUmUsuarioUsandoUmConstructor() {
+        super.uri = prop.getProp("uri_jasonPlace_users");
+        super.headers = apiHeaders.jsonPlasceHolderHeader();
+        jsonPlaceHolderConstructor = new JsonPlaceHolderConstructor(11,faker.name().firstName(),faker.funnyName().name(),
+                faker.internet().emailAddress(),faker.address().streetAddress(),"apto 543",
+                faker.address().city(),faker.address().zipCode(),faker.funnyName().name()+".LTDA",
+                faker.number().digit(),faker.number().digit(),faker.phoneNumber().cellPhone(),faker.internet().domainName(),
+                "build em'up, take em'down",faker.funnyName().name());
+        super.body = jsonPlaceHolderConstructor.getJson();
+        super.POST();
 
+    }
 
 
 
@@ -169,14 +185,11 @@ public class PassosJsonPlaceHolderUser extends ApiRequest {
     }
 
 
-    @Então("devo validar o compor enviado e o corpo recebido")
-    public void devoValidarOComporEnviadoEOCorpoRecebido() {
+    @Então("devo validar o corpo enviado e o corpo recebido")
+    public void devoValidarOCorpoEnviadoEOCorpoRecebido() {
         JSONObject corpoRetorno = new JSONObject(response.getBody().asString());
         assertEquals(body.toString(),corpoRetorno.toString());
     }
-
-
-
 
 
 

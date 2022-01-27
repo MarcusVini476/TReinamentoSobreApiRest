@@ -14,7 +14,7 @@ import java.io.IOException;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         glue = "passos",
         publish = true,
-        tags = "@Regressivo")
+        tags = "@PostUsuarioConstructor")
 
 public class RunTest {
     @AfterClass

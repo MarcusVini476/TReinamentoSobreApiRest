@@ -126,7 +126,7 @@ public class PassosSwaggerPetStoreUsuarios extends ApiRequest {
 
 
     //-----------------------Puxar logout de usuario GET-----------------
-   
+
     @Quando("realizar a busca do logout do usuario")
     public void realizarABuscaDoLogoutDoUsuario() {
         super.uri = prop.getProp("uri_petstore_logout");

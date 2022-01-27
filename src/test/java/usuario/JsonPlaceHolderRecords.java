@@ -10,8 +10,9 @@ import org.json.XML;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public record JsonPlaceHolderRecords(Integer id, String name, String username, String email, String street,
-                                     String suite, String city, String zipcode, String companyName, String lat, String lng, String phone,
+public record JsonPlaceHolderRecords(Integer id, String name, String username, String email,
+                                     String street, String suite, String city, String zipcode,
+                                     String companyName, String lat, String lng, String phone,
                                      String website, String catchphrase, String bs) {
     public JSONObject getJson() {
 
