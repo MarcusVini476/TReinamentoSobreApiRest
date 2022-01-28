@@ -72,19 +72,21 @@ Funcionalidade: Realizar e validar testes Rest com a Api da Json Place Holder
       | 9       |
       | 10      |
 
-#records
-  @PostUsuarioRecords
-  Cenário: Criar um usuario na Api usando a classe records
-    Dado  que tenho acesso a JsonPlaceHolder
-    E envio dados validos de um usuario usando records
-    Então devo validar o corpo enviado e o corpo recebido
-    E garantir a devolutiva de status 201
+
 
 #constructor
   @PostUsuarioConstructor
   Cenário: Criar um usuario na Api usando constructor
     Dado que tenho acesso a JsonPlaceHolder
     E envio dados validos de um usuario usando um constructor
+    Então devo validar do corpo recebido e o corpo enviado
+    E garantir a devolutiva de status 201
+
+#GettersEsetters
+  @PostUsuarioGetterSetters
+  Cenário: criar um usuario na Api usando get e set
+    Dado que tenho acesso a JsonPlaceHolder
+    E envio dados validos de um usuario usando get e set
     Então devo validar do corpo recebido e o corpo enviado
     E garantir a devolutiva de status 201
 #jsonPuro
