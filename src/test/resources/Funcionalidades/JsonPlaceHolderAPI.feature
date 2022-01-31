@@ -90,5 +90,11 @@ Funcionalidade: Realizar e validar testes Rest com a Api da Json Place Holder
     Então devo validar do corpo recebido e o corpo enviado
     E garantir a devolutiva de status 201
 #jsonPuro
-#xml
+  @PostUsuarioArquivoJson
+  Cenário: criar um usuario na Api usando um arquivo Json pronto
+  Dado  que tenho acesso a JsonPlaceHolder
+  E envio dados validos de um usuario usando um Json
+  Então devo validar do corpo recebido e o corpo enviado
+  E garantir a devolutiva de status 201
+
 

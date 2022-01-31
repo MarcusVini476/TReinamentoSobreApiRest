@@ -13,7 +13,10 @@ import org.json.JSONObject;
 import usuario.JsonPlaceHolderConstructor;
 import usuario.JsonPlaceHolderGetSet;
 import usuario.JsonPlaceHolderLombok;
+import utils.UtilsJson;
 import utils.UtilsProperties;
+
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,6 +25,7 @@ public class PassosJsonPlaceHolderUser extends ApiRequest {
     UtilsProperties prop = new UtilsProperties();
     ApiHeaders apiHeaders = new ApiHeaders();
     JsonPlaceHolderLombok usuarioJPHLombok;
+    UtilsJson utilsJson = new UtilsJson();
 
     JsonPlaceHolderConstructor jsonPlaceHolderConstructor;
     JsonPlaceHolderGetSet jsonPlaceHolderGetSet = new JsonPlaceHolderGetSet();
@@ -100,6 +104,15 @@ public class PassosJsonPlaceHolderUser extends ApiRequest {
         jsonPlaceHolderGetSet.setZipcode(faker.address().zipCode());
         jsonPlaceHolderGetSet.setWebsite(faker.internet().domainName());
         super.body = jsonPlaceHolderGetSet.getjson();
+        super.POST();
+
+    }
+
+    @E("envio dados validos de um usuario usando um Json")
+    public void envioDadosValidosDeUmUsuarioUsandoUmJson() throws IOException {
+        super.uri = prop.getProp("uri_jasonPlace_users");
+        super.headers = apiHeaders.jsonPlasceHolderHeader();
+        super.body = utilsJson.parseJsonFile("JsonPlaceHolderCriaçãoDeUsuario");
         super.POST();
 
     }
