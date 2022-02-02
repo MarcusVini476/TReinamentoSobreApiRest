@@ -4,6 +4,7 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import utils.UtilsLog;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -28,6 +29,7 @@ public class ApiUtils extends UtilsLog {
         super.logInfo("Status Code : " + response.statusCode());
         super.logInfo("Payload recebido : \n" + response.asPrettyString());
         super.logInfo("Tempo de Resposta : " + response.timeIn(TimeUnit.MILLISECONDS));
+        super.logInfo("Tamanho do Corpo : " + response.body().jsonPath().getJsonObject("size()") + " objetos");
 
     }
 
